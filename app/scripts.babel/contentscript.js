@@ -6,11 +6,11 @@ $(function () {
     //console.log(msg);
       if (msg.value) {
         r = msg.value;
-        console.log('Receive value = ' + r);
+        //console.log('Receive value = ' + r);
         chrome.storage.local.set({'r':r}, function(){console.log('Set', r);});
         sendResponse(r);
       } else {
-        sendResponse('Value message is none.');
+        sendResponse('50');
       }
   });
 
@@ -19,14 +19,14 @@ $(function () {
       if(value)
       {
         r = value.r
-        console.log('Get', r);
+        //console.log('Get', r);
       }
     }
   );
 
   $('a').click(function(){
     const ran = Math.floor( Math.random() * 101 );
-    console.log(ran, r, ran >= parseInt(r));
+    console.log(ran, r, ran >= parseInt(r) ? '実行は拒否されました' : '実行します');
     if(r != undefined){
       if(ran >= parseInt(r)){
         //count+=1;

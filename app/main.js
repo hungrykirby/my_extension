@@ -7,7 +7,7 @@ $(function(){
     function(v) {
       if(v)
       {
-        console.log('Get on tab ', v.r);
+        //console.log('Get on tab ', v.r);
         value = v.r;
         $('.percentage').text(value + '%');
         $('.bar').val(parseInt(value));
@@ -26,8 +26,8 @@ $(function(){
         chrome.tabs.sendMessage(tabs[0].id, {
           value: r
         },function(msg) {
-          console.log("result message:", msg);
-          if(msg == undefined) alert('エラー！！更新してください')
+          //console.log("result message:", msg);
+          if(msg == undefined) alert('エラー！!このページでは実行できません');
         });
       });
       chrome.browserAction.setBadgeText({ text: String(value) });
